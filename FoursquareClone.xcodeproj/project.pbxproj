@@ -13,6 +13,8 @@
 		5F32EDFD2A0928CA0062F402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F32EDFB2A0928CA0062F402 /* Main.storyboard */; };
 		5F32EDFF2A0928CB0062F402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F32EDFE2A0928CB0062F402 /* Assets.xcassets */; };
 		5F32EE022A0928CB0062F402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F32EE002A0928CB0062F402 /* LaunchScreen.storyboard */; };
+		5F32EE0B2A092BA10062F402 /* ParseObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 5F32EE0A2A092BA10062F402 /* ParseObjC */; };
+		5F32EE0E2A092C540062F402 /* ParseUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5F32EE0D2A092C540062F402 /* ParseUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F32EE0E2A092C540062F402 /* ParseUI in Frameworks */,
+				5F32EE0B2A092BA10062F402 /* ParseObjC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				5F32EDF42A0928CA0062F402 /* FoursquareClone */,
 				5F32EDF32A0928CA0062F402 /* Products */,
+				5F32EE0C2A092C540062F402 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +72,13 @@
 			path = FoursquareClone;
 			sourceTree = "<group>";
 		};
+		5F32EE0C2A092C540062F402 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +95,10 @@
 			dependencies = (
 			);
 			name = FoursquareClone;
+			packageProductDependencies = (
+				5F32EE0A2A092BA10062F402 /* ParseObjC */,
+				5F32EE0D2A092C540062F402 /* ParseUI */,
+			);
 			productName = FoursquareClone;
 			productReference = 5F32EDF22A0928CA0062F402 /* FoursquareClone.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 5F32EDE92A0928CA0062F402;
+			packageReferences = (
+				5F32EE092A092BA10062F402 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */,
+			);
 			productRefGroup = 5F32EDF32A0928CA0062F402 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +377,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F32EE092A092BA10062F402 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-SDK-iOS-OSX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F32EE0A2A092BA10062F402 /* ParseObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F32EE092A092BA10062F402 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseObjC;
+		};
+		5F32EE0D2A092C540062F402 /* ParseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F32EE092A092BA10062F402 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F32EDEA2A0928CA0062F402 /* Project object */;
 }
