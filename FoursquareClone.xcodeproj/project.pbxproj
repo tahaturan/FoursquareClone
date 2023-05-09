@@ -18,6 +18,7 @@
 		5F59B7652A0A3D020002107E /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59B7642A0A3D020002107E /* PlacesVC.swift */; };
 		5F59B7672A0A597C0002107E /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59B7662A0A597C0002107E /* AddPlaceVC.swift */; };
 		5F59B7692A0A5AE20002107E /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59B7682A0A5AE20002107E /* MapVC.swift */; };
+		5F59B76B2A0A60820002107E /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F59B76A2A0A60820002107E /* DetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5F59B7642A0A3D020002107E /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		5F59B7662A0A597C0002107E /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		5F59B7682A0A5AE20002107E /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		5F59B76A2A0A60820002107E /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				5F59B7642A0A3D020002107E /* PlacesVC.swift */,
 				5F59B7662A0A597C0002107E /* AddPlaceVC.swift */,
 				5F59B7682A0A5AE20002107E /* MapVC.swift */,
+				5F59B76A2A0A60820002107E /* DetailsVC.swift */,
 				5F32EDFB2A0928CA0062F402 /* Main.storyboard */,
 				5F32EDFE2A0928CB0062F402 /* Assets.xcassets */,
 				5F32EE002A0928CB0062F402 /* LaunchScreen.storyboard */,
@@ -170,6 +173,7 @@
 				5F59B7692A0A5AE20002107E /* MapVC.swift in Sources */,
 				5F32EDF62A0928CA0062F402 /* AppDelegate.swift in Sources */,
 				5F59B7652A0A3D020002107E /* PlacesVC.swift in Sources */,
+				5F59B76B2A0A60820002107E /* DetailsVC.swift in Sources */,
 				5F59B7672A0A597C0002107E /* AddPlaceVC.swift in Sources */,
 				5F32EDF82A0928CA0062F402 /* SceneDelegate.swift in Sources */,
 			);
