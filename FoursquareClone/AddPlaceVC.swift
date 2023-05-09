@@ -32,7 +32,29 @@ class AddPlaceVC: UIViewController {
     
 
     @IBAction func nextButton(_ sender: Any) {
-        performSegue(withIdentifier: "toMapVC", sender: nil)
+        
+        if placeNameTextField.text != "" && placeTypeTextField.text != "" && placeAtmosphereTextField.text != ""{
+            
+            if let choosenImage = placeImageView.image {
+                
+                let placeModel = PlaceModel.shatedInstance
+                placeModel.placeName = placeNameTextField.text!
+                placeModel.placeType = placeTypeTextField.text!
+                placeModel.placeAtmosphere = placeAtmosphereTextField.text!
+                placeModel.placeImage = choosenImage
+                
+            }
+            performSegue(withIdentifier: "toMapVC", sender: nil)
+        }else{
+            let alertController = UIAlertController(title: "Error", message: "Place Name/Type/Atmosphere ??", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .default)
+            alertController.addAction(okButton)
+            self.present(alertController, animated: true)
+        }
+        
+        
+        
+       
     }
     
 
