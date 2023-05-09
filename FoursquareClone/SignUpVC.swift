@@ -8,7 +8,7 @@
 import UIKit
 import ParseCore
 
-class ViewController: UIViewController {
+class SignUpVC: UIViewController {
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,20 +26,17 @@ class ViewController: UIViewController {
         signInUser()
     }
     
-    
-    
     @IBAction func signUpButton(_ sender: Any) {
-        
         signUpUser()
-        
     }
-    
-
 }
 
 
+
+
+
 //MARK: Giris Kontrol islemleri SignIn
-extension ViewController{
+extension SignUpVC{
     func signInUser()  {
         if userNameTextField.text != nil && passwordTextField.text != nil {
             PFUser.logInWithUsername(inBackground: userNameTextField.text!, password: passwordTextField.text!) { user , error in
@@ -64,7 +61,7 @@ extension ViewController{
 
 
 //MARK: User Olusturma
-extension ViewController{
+extension SignUpVC{
     func signUpUser()  {
         if userNameTextField.text != "" && passwordTextField.text != ""{
             
@@ -96,7 +93,7 @@ extension ViewController{
 
 
 //MARK: makeAlert
-extension ViewController{
+extension SignUpVC{
     func makeAlert(title:String , message:String)  {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertActionOKButton = UIAlertAction(title: "OK", style: .default)
@@ -131,7 +128,7 @@ extension ViewController{
 //MARK: ---------------------------Parse Database Sample-----------------------------------------------
 
 //MARK: Parse Veritabanina veri ekleme Ornek
-extension ViewController{
+extension SignUpVC{
     func parseAddDataSample()  {
         let parseObject = PFObject(className: "Fruits")
         parseObject["name"] = "Banana"
@@ -148,7 +145,7 @@ extension ViewController{
 }
 
 //MARK: Parse Veritabani Veri Cekme Ornek
-extension ViewController{
+extension SignUpVC{
     func getDataParseSample()  {
         
         let query = PFQuery(className: "Fruits")

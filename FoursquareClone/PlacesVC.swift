@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ParseCore
 
 class PlacesVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -13,6 +14,7 @@ class PlacesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBarButtonItem()
+        logOutBarButtonItem()
       
     }
     
@@ -34,5 +36,26 @@ extension PlacesVC{
     @objc  func addButtonClicked()  {
           
       }
+    
+    
+    func logOutBarButtonItem()  {
+        let barButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(logOutButtonClikced))
+        
+        navigationController?.navigationBar.topItem?.leftBarButtonItem = barButton
+    }
+    
+    @objc func logOutButtonClikced(){
+        PFUser.logOutInBackground { error in
+            if error != nil {
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription ?? "Error", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .default)
+                alertController.addAction(okButton)
+                self.present(alertController, animated: true)
+            }else{
+                self.performSegue(withIdentifier: "toSignUpVC", sender: nil)
+            }
+        }
+        
+    }
 
 }
