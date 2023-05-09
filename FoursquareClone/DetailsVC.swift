@@ -36,10 +36,27 @@ class DetailsVC: UIViewController {
             placeLatitude = Double(place.placeLatitude)!
             placeLongitude = Double(place.placeLongitude)!
         }
+        showMaps()
 
     }
-    
+ 
+}
 
-
-
+//MARK: Hatira islemleri
+extension DetailsVC{
+    func showMaps()  {
+        let location = CLLocationCoordinate2D(latitude: self.placeLatitude, longitude: self.placeLongitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)
+        
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        self.detailsMapView.setRegion(region, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = self.detailsNameLabel.text
+        annotation.subtitle = self.detailsTypeLabel.text
+        
+        self.detailsMapView.addAnnotation(annotation)
+    }
 }
