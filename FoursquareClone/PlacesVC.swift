@@ -34,7 +34,7 @@ extension PlacesVC{
     }
     //Selecyor target
     @objc  func addButtonClicked()  {
-          
+          performSegue(withIdentifier: "toAddPlaceVC", sender: nil)
       }
     
     
