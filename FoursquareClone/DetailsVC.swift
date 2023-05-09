@@ -20,9 +20,13 @@ class DetailsVC: UIViewController {
     
     @IBOutlet weak var detailsMapView: MKMapView!
     
+    var choosenPlace:PlacesModel?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
        
     }

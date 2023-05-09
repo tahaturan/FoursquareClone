@@ -11,6 +11,7 @@ import ParseCore
 class PlacesVC: UIViewController {
     
     var placesList = [PlacesModel]()
+    var selectedPlace:PlacesModel?
     
 
     
@@ -85,6 +86,18 @@ extension PlacesVC:UITableViewDelegate , UITableViewDataSource{
 
         return cell
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC"{
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.choosenPlace = self.selectedPlace
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedPlace = placesList[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
 }
 
