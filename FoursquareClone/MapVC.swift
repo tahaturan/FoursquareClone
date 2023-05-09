@@ -41,14 +41,14 @@ class MapVC: UIViewController {
            
            let annotation = MKPointAnnotation()
            annotation.coordinate = coordinates
-           annotation.title = PlaceModel.shatedInstance.placeName
-           annotation.subtitle = PlaceModel.shatedInstance.placeType
+           annotation.title = PlaceModelSingleton.shatedInstance.placeName
+           annotation.subtitle = PlaceModelSingleton.shatedInstance.placeType
            
            
            self.mapView.addAnnotation(annotation)
            
-           PlaceModel.shatedInstance.placeLatitude = String(coordinates.latitude)
-           PlaceModel.shatedInstance.placeLongitude = String(coordinates.longitude)
+           PlaceModelSingleton.shatedInstance.placeLatitude = String(coordinates.latitude)
+           PlaceModelSingleton.shatedInstance.placeLongitude = String(coordinates.longitude)
        }
        
         
@@ -66,7 +66,7 @@ extension MapVC{
     
     @objc func saveBarButtonClikced(){
         //Parse Save islemleri
-        let placeModel = PlaceModel.shatedInstance
+        let placeModel = PlaceModelSingleton.shatedInstance
         
         let object = PFObject(className: "Places")
         object["name"] = placeModel.placeName

@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class PlaceModel {
+class PlaceModelSingleton {
     
-    static let shatedInstance = PlaceModel()
+    static let shatedInstance = PlaceModelSingleton()
     
     var placeName = ""
     var placeType = ""

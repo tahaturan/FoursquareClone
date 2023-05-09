@@ -37,7 +37,7 @@ class AddPlaceVC: UIViewController {
             
             if let choosenImage = placeImageView.image {
                 
-                let placeModel = PlaceModel.shatedInstance
+                let placeModel = PlaceModelSingleton.shatedInstance
                 placeModel.placeName = placeNameTextField.text!
                 placeModel.placeType = placeTypeTextField.text!
                 placeModel.placeAtmosphere = placeAtmosphereTextField.text!
