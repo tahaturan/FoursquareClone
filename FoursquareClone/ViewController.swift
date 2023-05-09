@@ -17,20 +17,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getDataParseSample()
         
         
     }
     
     
     @IBAction func signInButton(_ sender: Any) {
+        signInUser()
     }
     
     
     
     @IBAction func signUpButton(_ sender: Any) {
         
-        addUser()
+        signUpUser()
         
     }
     
@@ -38,12 +38,34 @@ class ViewController: UIViewController {
 }
 
 
+//MARK: Giris Kontrol islemleri SignIn
+extension ViewController{
+    func signInUser()  {
+        if userNameTextField.text != nil && passwordTextField.text != nil {
+            PFUser.logInWithUsername(inBackground: userNameTextField.text!, password: passwordTextField.text!) { user , error in
+                if error != nil {
+                    self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error!")
+                }else{
+                    //Segue
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
+                }
+                
+                
+            }
+        }else{
+            makeAlert(title: "Error", message: "UserName / Password ??")
+        }
+    }
+}
+
+
+
 
 
 
 //MARK: User Olusturma
 extension ViewController{
-    func addUser()  {
+    func signUpUser()  {
         if userNameTextField.text != "" && passwordTextField.text != ""{
             
             let user = PFUser()
@@ -57,7 +79,7 @@ extension ViewController{
                 }else{
                     //SignUP basarili ise Hata yoksa
                     //Segue yapilacak
-                    print("OK!!!")
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }
             
